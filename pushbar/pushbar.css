@@ -1,27 +1,28 @@
-.pushbar.opened{
-display: block;
+.pushbar.opened {
+	display: block;
 }
 
-html.pushbar_locked{
-    overflow: hidden;
-    -ms-touch-action: none;
-    touch-action: none;
+html.pushbar_locked {
+	overflow: hidden;
+	-ms-touch-action: none;
+	touch-action: none;
 }
 
-
-.pushbar_locked .pushbar_main_content.pushbar_blur{
-	filter:blur(15px);
+.pushbar_locked .pushbar_main_content.pushbar_blur {
+	filter: blur(15px);
 }
-.pushbar{
+
+.pushbar {
 	z-index: 1000;
 	position: fixed;
 	will-change: transform;
 	overflow-y: auto;
-	transition:transform 0.5s ease;
+	transition: transform 0.5s ease;
 	will-change: transform;
-	background:#fff;
+	background: #fff;
 }
-.pushbar_overlay{
+
+.pushbar_overlay {
 	z-index: -999;
 	position: fixed;
 	width: 100%;
@@ -30,20 +31,20 @@ html.pushbar_locked{
 	min-height: 100vh;
 	top: 0;
 	left: 0;
-    will-change: opacity;
-    transition:opacity 0.5s ease;
-    opacity:0;
-    will-change: opacity;
+	will-change: opacity;
+	transition: opacity 0.5s ease;
+	opacity: 0;
+	will-change: opacity;
 	background: #3c3442;
 }
-html.pushbar_locked .pushbar_overlay{
-	opacity:0.8;
+
+html.pushbar_locked .pushbar_overlay {
+	opacity: 0.8;
 	z-index: 999;
-    transition:opacity 0.5s ease;
+	transition: opacity 0.5s ease;
 }
 
-
-.pushbar.from_left{
+.pushbar.from_left {
 	top: 0;
 	left: 0;
 	width: 256px;
@@ -53,7 +54,7 @@ html.pushbar_locked .pushbar_overlay{
 	transform: translateZ(0) translateX(-100%);
 }
 
-.pushbar.from_right{
+.pushbar.from_right {
 	top: 0;
 	right: 0;
 	width: 256px;
@@ -63,7 +64,7 @@ html.pushbar_locked .pushbar_overlay{
 	transform: translateZ(0) translateX(100%);
 }
 
-.pushbar.from_top{
+.pushbar.from_top {
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -71,7 +72,8 @@ html.pushbar_locked .pushbar_overlay{
 	min-height: 150px;
 	transform: translateZ(0) translateY(-100%);
 }
-.pushbar.from_bottom{
+
+.pushbar.from_bottom {
 	bottom: 0;
 	left: 0;
 	width: 100%;
@@ -80,6 +82,6 @@ html.pushbar_locked .pushbar_overlay{
 	transform: translateZ(0) translateY(100%);
 }
 
-.pushbar.opened{
-   transform: translateX(0px) translateY(0px);
+.pushbar.opened {
+	transform: translateX(0px) translateY(0px);
 }

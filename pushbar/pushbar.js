@@ -23,7 +23,7 @@ class Pushbar {
     const { activeBar } = this;
     return Boolean(activeBar instanceof HTMLElement && activeBar.classList.contains('opened'));
   }
-  
+
   get activeBarId() {
     const { activeBar } = this;
     return activeBar instanceof HTMLElement && activeBar.getAttribute('data-pushbar-id');
@@ -80,17 +80,17 @@ class Pushbar {
     if (String(pushbarId) === this.activeBarId && this.opened) {
       return;
     }
-    
+
     // Get new pushbar target
     const pushbar = Pushbar.findElementById(pushbarId);
 
     if (!pushbar) return;
-    
+
     // Close active bar (if exists)
     if (this.opened) {
       this.close();
     }
-    
+
     Pushbar.dispatchOpen(pushbar);
     pushbar.classList.add('opened');
 
@@ -103,14 +103,14 @@ class Pushbar {
   close() {
     const { activeBar } = this;
     if (!activeBar) return;
-    
+
     Pushbar.dispatchClose(activeBar);
     activeBar.classList.remove('opened');
 
     const Root = document.querySelector('html');
     Root.classList.remove('pushbar_locked');
     Root.removeAttribute('pushbar');
-    
+
     this.activeBar = null;
   }
 }
